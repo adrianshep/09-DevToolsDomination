@@ -16,12 +16,31 @@
       p.style.fontSize = '50px';
     }
     // Regular
-    // Interpolated
+    console.log('hello');
+
+    // Interpolated: second string will replace %s
+    console.log('Hello I am a %s string!', '*');
+    // although ES6 now uses backticks for ease:
+    console.log('Hello I am ${var}');
+
     // Styled
-    // warning!
-    // Error :|
+    console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue');
+
+    // warning! gives stack trace as to where it got called, too.
+    console.warn('OH NOOO');
+
+    // Error :| will also give a stack trace as to where that appears
+    console.error('Shit!');
+
     // Info
-    // Testing
+    console.info('Crocodiles eat 3-4 people per year');
+
+    // Testing: will only appear if assertion fails
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('ouch'), 'That is wrong!'); // will throw assertion
+
+    console.assert(1 === 1, 'That is wrong!'); // won't throw assertion because 1 === 1 isn't false
+
     // clearing
     // Viewing DOM Elements
     // Grouping together
