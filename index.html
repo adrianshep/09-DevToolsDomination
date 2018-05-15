@@ -42,10 +42,39 @@
     console.assert(1 === 1, 'That is wrong!'); // won't throw assertion because 1 === 1 isn't false
 
     // clearing
+    console.clear();
+
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p); // will give you dropdown of everything that lives on that element
+
     // Grouping together
+    dogs.forEach(dog => {
+      console.group(`${dog.name}`);
+      console.groupCollapsed(`${dog.name}`);
+      console.groupEnd(`${dog.name}`);
+    });
+
     // counting
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Wes');
+
     // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      });
+
+    // table
+    console.table(dogs); // will display as table in console if have same properties
+
   </script>
 </body>
 </html>
